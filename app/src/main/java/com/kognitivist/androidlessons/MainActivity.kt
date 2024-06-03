@@ -1,25 +1,37 @@
 package com.kognitivist.androidlessons
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.kognitivist.androidlessons.ui.theme.AndroidLessonsTheme
 
 class MainActivity : ComponentActivity() {
+
+    //private val hCaptcha = HCaptcha.getClient(this)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
+
+        setContent{
 
         }
+
+        /*hCaptcha.setup(BuildConfig.SITE_KEY).verifyWithHCaptcha()
+        hCaptcha.addOnSuccessListener { response: HCaptchaTokenResponse ->
+            val userResponseToken = response.tokenResult
+            val intent = Intent()
+            intent.putExtra("captcha", userResponseToken)
+            setResult(RESULT_OK, intent)
+            finish()
+        }.addOnFailureListener { e: HCaptchaException ->
+            Log.d("hCaptcha", "hCaptcha failed: " + e.getMessage() + "(" + e.getStatusCode() + ")")
+            setResult(RESULT_CANCELED)
+            finish()
+        }.addOnOpenListener {
+            Log.d("hCaptcha", "hCaptcha is now visible.")
+        }*/
     }
 }
+
+
 
